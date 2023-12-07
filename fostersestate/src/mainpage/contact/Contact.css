@@ -1,0 +1,30 @@
+/* Contact.css */
+
+.contact-footer {
+    background-color: rgba(34, 25, 25, 0.95); /* Set the background color of the footer */
+    color: #fff; /* Set text color to white */
+    padding: 40px;
+    display: flex;
+    justify-content: stretch;
+    align-items: center;
+  }
+  
+  .contact-info,
+  .social-media {
+    flex: 1;
+  }
+  
+  .contact-info p,
+  .social-media a {
+    margin-bottom: 10px;
+    color: #fff;
+  }
+  
+  .social-media a {
+    text-decoration: none;
+    display: block;
+    color: #fff;
+  }
+  
+  /* Style social media icons or add more styles based on your design */
+  

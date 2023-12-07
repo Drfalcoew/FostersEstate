@@ -1,0 +1,50 @@
+/* Header.css */
+
+.menu-bar {
+    position: fixed;
+    width: calc(100% - 40px);
+    height: 60px;
+    top: 0;
+    left: 0;
+    display: flex;
+    padding: 0 20px;
+    justify-content: space-between;
+    align-items: center;
+    background-color: rgba(34, 25, 25, 0.95); /* Set the background color of the menu bar */
+    color: #fff; /* Set text color to white */
+    z-index: 1000; /* Ensure the menu bar stays above other elements */
+}
+
+  .header-left {
+    display: flex;
+    align-self: center;
+  }
+  
+  .logo {
+    font-size: 1.5em;
+    font-weight: bold;
+    margin-right: 12px;
+  }
+
+  .sub-logo {
+    font-size: 1em;
+    font-weight: bold;
+    padding-top: 7px;
+    color: rgba(255, 255, 255, 0.7)
+  }
+  
+  .nav-links {
+    display: flex;
+  }
+  
+  .nav-links a {
+    text-decoration: none;
+    color: #fff; /* Set text color to white */
+    margin: 0 15px;
+    transition: color 0.3s ease; /* Smooth color transition on hover */
+  }
+  
+  .nav-links a:hover {
+    color: #007bff; /* Change the color on hover */
+  }
+  
