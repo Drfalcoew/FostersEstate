@@ -13,6 +13,8 @@
     width: 100%;
     max-height: 80vh;
     overflow: hidden;
+    display: flex; /* Add this line to enable centering */
+    align-items: center; /* Center content vertically */
   }
 
   .cover-image::before {
@@ -36,9 +38,8 @@
   
   .content-container {
     position: absolute;
-    top: 25%;
-    max-width: 30vw;
     left: 10%;
+    max-width: 30vw;
     padding: 20px;
     text-align: center;
     z-index: 2;

@@ -2,16 +2,28 @@
 
 import React from 'react';
 import './Header.css'; // Import the CSS file
+import { Link } from 'react-router-dom';
 
 const Header: React.FC = () => {
+
+  const returnToHome = () => {
+    if (window.location.pathname !== '/') {
+      window.location.href = '/';
+    }
+  }
+
   return (
     <div className="menu-bar">
       <div className='header-left'> 
-        <div className="logo">Foster's Estate</div>
-        <div className="sub-logo">Redlands, CA, USA</div>
+        <div onClick={returnToHome}
+        className="logo">
+          Foster's Estate
+          </div>
+        <div onClick={returnToHome}
+         className="sub-logo">Redlands, CA, USA</div>
       </div>
       <nav className="nav-links">
-        <a href="#home">Home</a>
+        <a href="/">Home</a>
         <a href="#about">About Us</a>
         <a href="#services">Services</a>
         <a href="#contact">Contact</a>

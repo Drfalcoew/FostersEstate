@@ -45,7 +45,7 @@ const Contact: React.FC = () => {
 
 
     return (
-        <div className="contact-footer">
+        <div id='contact' className="contact-footer">
           <div className="contact-info">
             <h3>Contact Us</h3>
             {contactInfo.map((contact) => (
