@@ -1,25 +1,27 @@
-import { Spin, Modal } from 'antd'
-import './Common.css'
+import React from 'react';
+import { Modal, Spin } from 'antd';
 
-const LoadingModal = (visible = true, time = 3) => {
-
-    setTimeout(() => {
-        visible = false
-    }, time * 1000)
-
-
-    return (
-        <Modal
-        open={visible}
-        closable={false}
-        footer={null}
-        centered={true}
-        width={100}
-        style={{ textAlign: 'center' }}
-        >
-        <Spin size='large' />
-        </Modal>
-    )
+interface LoadingModalProps {
+  visible: boolean;
+  closeModal: () => void;
 }
+
+const LoadingModal: React.FC<LoadingModalProps> = (props: LoadingModalProps) => (
+  <Modal
+    title={null}
+    open={props.visible}
+    centered
+    closable={true}
+    maskClosable={false}
+    className='loading-modal' // Add a custom class for styling
+    onCancel={props.closeModal}
+    onOk={props.closeModal}
+  >
+    <div style={{ textAlign: 'center' }}>
+      <p style={{ marginTop: 16, fontSize: 20 }}>Scheduling Appointment...</p>
+      <Spin style={{ margin: 10 }} size="large" />
+    </div>
+  </Modal>
+);
 
 export default LoadingModal;

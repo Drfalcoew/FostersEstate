@@ -2,7 +2,6 @@
 
 import React from 'react';
 import './Header.css'; // Import the CSS file
-import { Link } from 'react-router-dom';
 
 const Header: React.FC = () => {
 

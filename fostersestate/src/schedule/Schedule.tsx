@@ -1,39 +1,57 @@
 // Schedule.tsx
 
 import React from 'react';
-import { Form, Input, DatePicker, Button, notification } from 'antd';
+import { Form, Input, DatePicker, Button, notification, Modal, Spin } from 'antd';
 import './Schedule.css';
+import { useNavigate } from 'react-router-dom';
+import { SchedulePropsData } from '../Types';
+import LoadingModal from '../common/LoadingModal';
 
+interface ScheduleProps {
+  onAppointmentScheduled: (data: SchedulePropsData) => void;
+}
 
-const Schedule: React.FC = () => {
+const Schedule: React.FC<ScheduleProps> = ({ onAppointmentScheduled }) => {
 
-  const openNotification = (type: 'success' | 'error', message: string, description: string) => {
-    notification[type]({
-      message,
-      description,
-    });
+  const [loading, setLoading] = React.useState(false);
+  const navigate = useNavigate();
+
+  const showLoadingModal = () => {
+    setLoading(true);
+  };
+
+  const hideLoadingModal = () => {
+    setLoading(false);
   };
 
   /* onFinish function to send data to backend */
-  const onFinish = (values: any) => {
+  const onFinish = async (values: any) => {
     
     const fullName = values.fullName;
     const email = values.email;
     const phoneNumber = values.phoneNumber;
     const preferredDate = values.preferredDate;
     const comments = values.comments;
+    let orderNumber = '902237474843'; // null;
 
-    const requestOptions = {
-      method: 'POST',
-      headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify({ fullName, email, phoneNumber, preferredDate, comments })
-    };
-    
-    // Example success notification
-    openNotification('success', 'Appointment Scheduled', 'Thank you for scheduling with FostersEstate. We will get in touch with you shortly.');
+    showLoadingModal();
 
-    // If there's an error, show an error notification
-    // openNotification('error', 'Error', 'Failed to schedule appointment. Please try again.');
+    // Simulate a delay, replace this with actual API call
+    await new Promise(resolve => setTimeout(resolve, 200000));
+
+    hideLoadingModal();
+ 
+    if (orderNumber) {
+      onAppointmentScheduled({
+        fullName: values.fullName,
+        email: values.email,
+        orderNumber: orderNumber,
+      });
+
+    navigate('/success');
+
+  }
+
   }
 
   return (
@@ -93,6 +111,7 @@ const Schedule: React.FC = () => {
           </Form.Item>
         </Form>
       </div>
+      <LoadingModal visible={loading} closeModal={hideLoadingModal} />
     </div>
   );
 };
