@@ -1,10 +1,10 @@
 // Schedule.tsx
 
 import React from 'react';
-import { Form, Input, DatePicker, Button, notification, Modal, Spin } from 'antd';
+import { Form, Input, DatePicker, Button } from 'antd';
 import './Schedule.css';
 import { useNavigate } from 'react-router-dom';
-import { SchedulePropsData } from '../Types';
+import { EmailRicipient, SchedulePropsData } from '../Types';
 import LoadingModal from '../common/LoadingModal';
 
 interface ScheduleProps {
@@ -29,29 +29,62 @@ const Schedule: React.FC<ScheduleProps> = ({ onAppointmentScheduled }) => {
     
     const fullName = values.fullName;
     const email = values.email;
-    const phoneNumber = values.phoneNumber;
-    const preferredDate = values.preferredDate;
-    const comments = values.comments;
-    let orderNumber = '902237474843'; // null;
+
+    let orderNumber = null;
+    
+    // const phoneNumber = values.phoneNumber;
+    // const preferredDate = values.preferredDate;
+    // const comments = values.comments;
 
     showLoadingModal();
 
     // Simulate a delay, replace this with actual API call
-    await new Promise(resolve => setTimeout(resolve, 200000));
+    await new Promise(resolve => setTimeout(resolve, 500));
 
     hideLoadingModal();
+
+    // Send email to customer
+    const emailProps : EmailRicipient = {
+      recipientEmail: email,
+      recipientName: fullName,
+      subject: "Your appointment has been scheduled",
+      message: `Thank you, ${fullName}. Your appointment has been scheduled. `,
+    };
+
+    // Sending email with default subject and message
+    try {
+      const response = await fetch('http://localhost:8080/api/email', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(emailProps),
+      });
+
+      // Check if the response status is OK (status code 2xx)
+      if (response.ok) {
+        const result = await response.json();
+        console.log('Success:', result);
+        orderNumber = result.orderNumber;
+      } else {
+        // If the response status is not OK, handle the error
+        console.error('Error:', response.status, response.statusText);
+      }
+    } catch (error) {
+      console.error('Fetch error:', error);
+      return;
+    }
+    
  
-    if (orderNumber) {
+    if (orderNumber) { // This navigates to the success page
       onAppointmentScheduled({
         fullName: values.fullName,
         email: values.email,
         orderNumber: orderNumber,
       });
 
-    navigate('/success');
-
-  }
-
+      navigate('/success');
+    }
   }
 
   return (
