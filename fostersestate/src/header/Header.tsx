@@ -23,9 +23,10 @@ const Header: React.FC = () => {
       </div>
       <nav className="nav-links">
         <a href="/">Home</a>
-        <a href="#about">About Us</a>
+        <a href="/about">About Us</a>
         <a href="#services">Services</a>
         <a href="#contact">Contact</a>
+        <a style={{fontWeight: 600}} href="/schedule">Schedule Appointment</a>
         {/* Add more menu items as needed */}
       </nav>
     </div>

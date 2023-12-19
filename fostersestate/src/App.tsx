@@ -7,6 +7,7 @@ import Header from './header/Header';
 import Contact from './mainpage/contact/Contact';
 import Success from './success/Success';
 import { SchedulePropsData } from './Types';
+import AboutUs from './about/AboutUs';
 
 function App() {
 
@@ -23,6 +24,7 @@ function App() {
         <Routes>
           <Route path="/" element={<Homepage />} />
           <Route path="/schedule" element={<Schedule onAppointmentScheduled={handleAppointmentScheduled} />} />
+          <Route path="/about" element={<AboutUs /> } />
           {appointmentData ? (
             <Route
               path="/success"

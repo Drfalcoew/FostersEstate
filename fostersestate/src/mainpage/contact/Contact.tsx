@@ -6,6 +6,11 @@ import { FacebookOutlined, InstagramOutlined, MailOutlined, PhoneOutlined, Twitt
 
 const Contact: React.FC = () => {
 
+    const generateRandomId = () => {
+        return Math.random().toString(36).substr(2, 9);
+    }
+
+
     const contactInfo = [
         {
             icon: <MailOutlined className='icon' />,
@@ -49,7 +54,7 @@ const Contact: React.FC = () => {
           <div className="contact-info">
             <h3>Contact Us</h3>
             {contactInfo.map((contact) => (
-              <div className="contact-info-item" key={contact.text.toString()}>
+              <div className="contact-info-item" key={generateRandomId()}>
                 {contact.icon} {contact.text}
               </div>
             ))}
@@ -59,7 +64,7 @@ const Contact: React.FC = () => {
 
             <div className="social-media-icons">
               {socialMedia.map((social) => (
-                <a href={social.link} key={social.name}>
+                <a href={social.link} key={generateRandomId()}>
                   {social.icon} {social.name}
                 </a>
               ))}
