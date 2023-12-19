@@ -4,8 +4,9 @@ import React from 'react';
 import { Form, Input, DatePicker, Button } from 'antd';
 import './Schedule.css';
 import { useNavigate } from 'react-router-dom';
-import { EmailRicipient, SchedulePropsData } from '../Types';
+import { EmailRecipient, SchedulePropsData } from '../Types';
 import LoadingModal from '../common/LoadingModal';
+import { notification } from 'antd';
 
 interface ScheduleProps {
   onAppointmentScheduled: (data: SchedulePropsData) => void;
@@ -29,6 +30,9 @@ const Schedule: React.FC<ScheduleProps> = ({ onAppointmentScheduled }) => {
     
     const fullName = values.fullName;
     const email = values.email;
+    const phoneNumber = values.phoneNumber;
+    const preferredDate = values.preferredDate;
+    const comments = values.comments;
 
     let orderNumber = null;
     
@@ -44,11 +48,14 @@ const Schedule: React.FC<ScheduleProps> = ({ onAppointmentScheduled }) => {
     hideLoadingModal();
 
     // Send email to customer
-    const emailProps : EmailRicipient = {
+    const emailProps : EmailRecipient = {
       recipientEmail: email,
       recipientName: fullName,
+      phoneNumber: phoneNumber,
       subject: "Your appointment has been scheduled",
-      message: `Thank you, ${fullName}. Your appointment has been scheduled. `,
+      message: `Thank you, ${fullName}. Please wait for a confirmation email from us.`,
+      comments: comments,
+      preferredDate: preferredDate,
     };
 
     // Sending email with default subject and message
@@ -69,9 +76,19 @@ const Schedule: React.FC<ScheduleProps> = ({ onAppointmentScheduled }) => {
       } else {
         // If the response status is not OK, handle the error
         console.error('Error:', response.status, response.statusText);
+        // Show an error notification
+        notification.error({
+          message: 'Error',
+          description: `Failed to schedule appointment: ${response.statusText}`,
+        });
       }
     } catch (error) {
       console.error('Fetch error:', error);
+      // Show an error notification
+      notification.error({
+        message: 'Fetch Error',
+        description: 'Failed to fetch data. Please try again later.',
+      });
       return;
     }
     

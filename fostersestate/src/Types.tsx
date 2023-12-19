@@ -4,9 +4,12 @@ export interface SchedulePropsData {
     orderNumber: string;
 }
 
-export interface EmailRicipient {
+export interface EmailRecipient {
     recipientEmail: string;
     recipientName: string;
+    phoneNumber: string;
     subject: string;
     message: string;
+    preferredDate: string;
+    comments: string;
 }

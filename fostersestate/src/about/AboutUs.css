@@ -1,0 +1,41 @@
+/* styles.css */
+
+.root-about-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 80vh;
+}
+
+.about-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 65vh;
+  width: 65vw;
+  margin-top: 3rem;
+}
+
+.about-title {
+  font-size: 1.5rem;
+  font-weight: 500;
+}
+
+.about-content {
+  font-size: 1rem;
+  font-weight: 200;
+  margin-bottom: 1rem;
+  text-align: center;
+}
+
+.about-image-container {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  width: 60vw;
+  height: 65vh;
+  justify-content: space-evenly;
+}
