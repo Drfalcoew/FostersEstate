@@ -3,14 +3,12 @@
 .contact-footer {
     background-color: rgba(34, 25, 25, 0.95); /* Set the background color of the footer */
     color: #fff; /* Set text color to white */
-    padding: 40px;
+    padding: 40px 15vw; /* Padding on top and bottom */
     display: flex;
-    justify-content: stretch;
-    align-items: center;
   }
   
   .contact-info,
-  .social-media {
+  .social-media, cities {
     flex: 1;
   }
   
@@ -26,5 +24,16 @@
     color: #fff;
   }
   
-  /* Style social media icons or add more styles based on your design */
-  
+  .cities-list-container {
+    column-count: 2;
+    max-width: 300px;
+
+  }
+
+  /*  make list two columns side */
+  .cities-list {
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-wrap: wrap;
+  }

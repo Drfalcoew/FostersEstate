@@ -48,6 +48,9 @@ const Contact: React.FC = () => {
         }
     ];
 
+    const cities = [
+      "Redlands", "Highland", "Loma Linda", "Yucaipa", "Mentone", "Colton", "Grand Terrace", "Calimesa", "Beaumont", "San Bernardino" ];
+
 
     return (
         <div id='contact' className="contact-footer">
@@ -59,9 +62,9 @@ const Contact: React.FC = () => {
               </div>
             ))}
           </div>
+
           <div className="social-media">
             <h3>Follow Us</h3>
-
             <div className="social-media-icons">
               {socialMedia.map((social) => (
                 <a href={social.link} key={generateRandomId()}>
@@ -69,8 +72,20 @@ const Contact: React.FC = () => {
                 </a>
               ))}
             </div>
-
           </div>
+
+        <div className="cities">
+          <h3>Cities We Serve</h3>
+          <div className='cities-list-container'>
+            {cities.map((city) => (
+              <ul className="cities-list" key={generateRandomId()}>
+                <li>{city}</li>
+              </ul>
+            ))
+            }
+            </div>
+        </div>
+
         </div>
       );
 };
