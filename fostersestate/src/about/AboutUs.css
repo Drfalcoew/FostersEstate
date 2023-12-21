@@ -1,21 +1,13 @@
-/* styles.css */
+/* AboutUs.css */
 
 .root-about-container {
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  height: 80vh;
-}
-
-.about-container {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  height: 65vh;
-  width: 65vw;
+  height: 100vh;
   margin-top: 3rem;
+  background-color: #f5f5f5;
 }
 
 .about-title {
@@ -30,12 +22,41 @@
   text-align: center;
 }
 
-.about-image-container {
+.about-image {
+  height: 30vh;
+  border-radius: 10px;
+}
+
+.about-image:hover {
+  transform: scale(1.1);
+  transition: transform 0.5s ease-in-out;
+}
+
+.about-section {
+  display: flex;
+  height: 100vh;
+  flex-direction: row;
+  align-items: center;
+  width: 100vw;
+  padding: 1rem;
+  margin-bottom: 1rem;
+  justify-content: space-evenly;
+}
+
+.about-section-inner {
   display: flex;
   flex-direction: row;
   align-items: center;
   justify-content: center;
-  width: 60vw;
-  height: 65vh;
-  justify-content: space-evenly;
+  width: 100%;
+}
+
+.about-text {
+  text-align: left;
+  margin-right: 1rem;
+  margin-left: 1rem;
+}
+
+.about-image-text {
+  margin-left: 1rem;
 }

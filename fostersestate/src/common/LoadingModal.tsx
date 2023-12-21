@@ -11,11 +11,11 @@ const LoadingModal: React.FC<LoadingModalProps> = (props: LoadingModalProps) => 
     title={null}
     open={props.visible}
     centered
-    closable={true}
+    closable={false}
     maskClosable={false}
     className='loading-modal' // Add a custom class for styling
-    onCancel={props.closeModal}
-    onOk={props.closeModal}
+    cancelButtonProps={{ style: { display: 'none' } }}
+    okButtonProps={{ style: { display: 'none' } }}
   >
     <div style={{ textAlign: 'center' }}>
       <p style={{ marginTop: 16, fontSize: 20 }}>Scheduling Appointment...</p>

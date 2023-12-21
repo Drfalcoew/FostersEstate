@@ -19,12 +19,12 @@ const Header: React.FC = () => {
           Foster's Estate
           </div>
         <div onClick={returnToHome}
-         className="sub-logo">Redlands, CA, USA</div>
+         className="sub-logo">Family Owned Business</div>
       </div>
       <nav className="nav-links">
         <a href="/">Home</a>
         <a href="/about">About Us</a>
-        <a href="#services">Services</a>
+        <a href="/services">Services</a>
         <a href="#contact">Contact</a>
         <a style={{fontWeight: 600}} href="/schedule">Schedule Appointment</a>
         {/* Add more menu items as needed */}

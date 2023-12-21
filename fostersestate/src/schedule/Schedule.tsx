@@ -42,11 +42,6 @@ const Schedule: React.FC<ScheduleProps> = ({ onAppointmentScheduled }) => {
 
     showLoadingModal();
 
-    // Simulate a delay, replace this with actual API call
-    await new Promise(resolve => setTimeout(resolve, 500));
-
-    hideLoadingModal();
-
     // Send email to customer
     const emailProps : EmailRecipient = {
       recipientEmail: email,
@@ -83,7 +78,7 @@ const Schedule: React.FC<ScheduleProps> = ({ onAppointmentScheduled }) => {
         notification.error({
           message: 'Error',
           description: `Failed to schedule appointment: ${response.statusText}`,
-        });
+        })
       }
     } catch (error) {
       console.error('Fetch error:', error);
@@ -93,6 +88,8 @@ const Schedule: React.FC<ScheduleProps> = ({ onAppointmentScheduled }) => {
         description: 'Failed to fetch data. Please try again later.',
       });
       return;
+    } finally {
+      hideLoadingModal();
     }
     
  
@@ -153,9 +150,9 @@ const Schedule: React.FC<ScheduleProps> = ({ onAppointmentScheduled }) => {
           <Form.Item className='schedule-form-item'
             label="Comments"
             name="comments"
-            rules={[{ required: false }]}
+            rules={[{ required: false, message: 'Please enter any comments', max: 200 }]}
           >
-            <Input.TextArea style={{height: '70px'}} />
+            <Input.TextArea style={{height: '70px', maxHeight: '200px'}} />
           </Form.Item>
           <Form.Item className='schedule-form-item'>
             <Button type="primary" htmlType="submit" style={{ width: '100%', marginTop: "10px", height: "40px" }}>

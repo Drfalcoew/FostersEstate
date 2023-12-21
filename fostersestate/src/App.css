@@ -3,7 +3,7 @@
 .app-container {
   overflow-y: scroll; /* Enable vertical scrolling */
   height: 100vh; /* Set the height of the container to 100% of the viewport height */
-  background-color: #f9f9f9; /* Add a background color to distinguish sections */
+  background-color: #f5f5f5;
 }
 
 .icon {

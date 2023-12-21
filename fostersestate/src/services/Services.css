@@ -1,0 +1,47 @@
+/* Services.css */
+
+.services-page {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+    transform: translateY(50px);
+    padding-bottom: 80px;
+    
+  }
+  
+  .intro-text {
+    font-size: 1.2em;
+    margin-bottom: 20px;
+  }
+  
+  .services-section {
+    margin-top: 40px;
+  }
+  
+  .service {
+    margin-bottom: 30px;
+  }
+  
+  .service h3 {
+    color: #333;
+  }
+  
+  .service p {
+    line-height: 1.6;
+  }
+  
+  .contact-section {
+    margin-top: 40px;
+  }
+  
+  .contact-section h2 {
+    color: #333;
+    margin-bottom: 15px;
+  }
+  
+  .contact-section p {
+    line-height: 1.6;
+  }
+  
+  /* Add your own styles for links, buttons, and other elements as needed */
+  
