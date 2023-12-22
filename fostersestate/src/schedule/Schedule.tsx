@@ -56,6 +56,8 @@ const Schedule: React.FC<ScheduleProps> = ({ onAppointmentScheduled }) => {
     // Sending email with default subject and message
     try {
 
+      console.log('Sending email to customer with api url: ', process.env.REACT_APP_API_URL || 'http://localhost:8080');
+
       const apiUrl = process.env.REACT_APP_API_URL || 'http://localhost:8080';
 
       const response = await fetch(`${apiUrl}/api/email`, {
