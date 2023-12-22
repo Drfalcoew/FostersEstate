@@ -44,6 +44,12 @@
     margin: 0 15px;
     transition: color 0.3s ease; /* Smooth color transition on hover */
   }
+
+  @media screen and (max-width: 600px) {
+    .nav-links {
+      display: none;
+    }
+  }
   
   .nav-links a:hover {
     color: #007bff; /* Change the color on hover */

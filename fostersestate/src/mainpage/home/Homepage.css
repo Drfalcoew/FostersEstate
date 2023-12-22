@@ -71,3 +71,24 @@
     background-color: #0056b3; /* Change the hover color as needed */
   }
   
+  /* MOBILE VERSION */
+  @media only screen and (max-width: 600px) {
+    .content-container {
+      position: absolute;
+      left: 0;
+      max-width: 100%;
+      padding: 20px;
+      text-align: center;
+      z-index: 2;
+    }
+    .cover-image img {
+      max-height: 80vh;
+      height: 60vh;
+      transform: scale(1.5);
+    }
+
+    .cover-image::before {
+      background: linear-gradient(to right, rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.5)); /* Adjust the gradient as needed */
+    }
+    
+  }

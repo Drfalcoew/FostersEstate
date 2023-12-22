@@ -8,7 +8,7 @@
   }
   
   .contact-info,
-  .social-media, cities {
+  .social-media, .cities {
     flex: 1;
   }
   
@@ -32,8 +32,49 @@
 
   /*  make list two columns side */
   .cities-list {
-    padding: 0;
     margin: 0;
     display: flex;
-    flex-wrap: wrap;
+  }
+
+  @media screen and (min-width: 600px) {
+    .cities-list {
+      padding: 0;
+    }
+  }
+
+  @media screen and (max-width: 600px) {
+    .cities-list-container {
+      column-count: 2;
+    }
+
+    .contact-footer {
+      flex-direction: column;
+      padding: 40px 5vw;
+    }
+
+    .contact-info,
+    .social-media,
+    .cities {
+      margin-bottom: 20px;
+    }
+
+    .contact-info, .social-media, .cities {
+      text-align: center;
+    }
+
+    .social-media a {
+      margin: 0 10px;
+    }
+
+    .social-media a:last-child {
+      margin-right: 0;
+    }
+
+    .cities-list {
+      justify-content: center;
+
+      list-style: none;
+
+
+    }
   }

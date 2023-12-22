@@ -59,3 +59,15 @@
       background-color: #eaeaea;
     }
   }
+
+  @media screen and (max-width: 600px) {
+    .section-container {
+      flex-direction: column;
+    }
+    .section {
+      margin: 20px 0;
+    }
+    .section-image {
+      max-width: 80%;
+    }
+  }
