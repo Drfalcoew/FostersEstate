@@ -49,6 +49,16 @@
     .nav-links {
       display: none;
     }
+
+    .sub-logo {
+      display: none;
+    }
+  }
+
+  @media screen and (min-width: 600px) and (max-width: 900px) {
+    .logo {
+      display: none;
+    }
   }
   
   .nav-links a:hover {

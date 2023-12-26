@@ -50,3 +50,27 @@
     width: 50vw;
     margin-bottom: 2vh;
 }
+
+@media screen and (max-width: 768px) {
+    .schedule-main-container {
+        flex-direction: column;
+    }
+
+    .schedule-image {
+        padding-bottom: 5vh;
+    }
+    
+    .schedule-image-container {
+        height: 50vh;
+    }
+    
+    .schedule-container {
+        margin: 5vh 0;
+        height: 50vh;
+        flex: auto;
+    }
+    
+    .schedule-form-item {
+        width: 80vw;
+    }
+}
