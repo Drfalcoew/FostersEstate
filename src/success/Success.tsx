@@ -1,4 +1,4 @@
-import { Button, Result } from 'antd';
+import { Result } from 'antd';
 import { SchedulePropsData } from '../Types';
 import './Success.css'
 

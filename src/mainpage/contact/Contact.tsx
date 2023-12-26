@@ -24,7 +24,7 @@ const Contact: React.FC = () => {
         },
         {
             icon: <PhoneOutlined className='icon' />,
-            text: <a>(555) 123-4567</a>,
+            text: <div>(555) 123-4567</div>,
             link: '#'
         }
     ];
