@@ -50,6 +50,7 @@ const Schedule: React.FC<ScheduleProps> = ({ onAppointmentScheduled }) => {
       subject: "Your appointment has been scheduled",
       message: `Thank you, ${fullName}. Please wait for a confirmation email from us.`,
       comments: comments,
+      address: values.address,
       preferredDate: preferredDate,
     };
 
@@ -141,6 +142,13 @@ const Schedule: React.FC<ScheduleProps> = ({ onAppointmentScheduled }) => {
             rules={[{ required: true, message: 'Please enter your phone number' }]}
           >
             <Input />
+          </Form.Item>
+          <Form.Item className='schedule-form-item'
+            label="Address (Street, City, State, Zip)"
+            name="address"
+            rules={[{ required: true, message: 'Please enter your address' }]}
+          >
+            <Input allowClear={true}/>
           </Form.Item>
           <Form.Item className='schedule-form-item'
             label="Preferred Date"

@@ -11,5 +11,6 @@ export interface EmailRecipient {
     subject: string;
     message: string;
     preferredDate: string;
+    address: string;
     comments: string;
 }
