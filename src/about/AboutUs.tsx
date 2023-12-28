@@ -1,57 +1,51 @@
 // AboutUs.js
+import Section from '../common/section/Section';
 import './AboutUs.css';
 import React from 'react';
 
 const AboutUs = () => {
-  const imagesAndText = [
+
+  const aboutUs = "Founded by brothers Blake and Drew Foster, our family-owned business is dedicated to providing personalized and professional services. "
+   + "With a passion for antiques and a commitment to preserving legacies, we offer hands-on estate sale solutions tailored to your unique needs. Whether you're downsizing or managing a loved one's estate, our team ensures a seamless process from start to finish. "
+  + "At Foster Brothers, we prioritize integrity, passion, and community. Let us handle your estate sale with the care it deserves, making it a stress-free and rewarding experience. Discover the Foster Brother's difference today. ";
+  
+  const sectionInformation = [
     {
-      image: "https://cdn3.vectorstock.com/i/1000x1000/78/22/two-friends-vector-8827822.jpg",
-      text: "This is the first image"
+      title: 'Blake Foster',
+      description: 'Blake Foster is the owner of Foster\'s Estate Services. He has been in the estate sale business since 2005. ' + 
+      'He is a graduate of the Missouri Auction School. He is a member of the American Society of Estate Liquidators.',
+      id: 'about',
+      image: 'https://cdn.pixabay.com/photo/2016/12/07/21/01/cartoon-1890438_960_720.jpg'
     },
     {
-      image: "https://placekitten.com/200/200",
-      text: "This is the second image"
+      title: 'Drew Foster',
+      description: 'Drew Foster is the owner of Foster\'s Estate Services. He has been in the estate sale business since 2005. ' +
+      'He is a graduate of the Missouri Auction School. He is a member of the American Society of Estate Liquidators.',
+      id: '1',
+      image: 'https://fiverr-res.cloudinary.com/images/t_main1,q_auto,f_auto,q_auto,f_auto/gigs/257493556/original/c7b833983586d61c5541a555a2a71bb4848f8ccd/make-logo-design-and-cartoon-style-profile-photo-thank-you-for-choosing.jpg',
     },
-    {
-      image: "https://placekitten.com/200/200",
-      text: "This is the third image"
-    }
   ];
 
   return (
-    <div className="root-about-container">
-        <div className="about-title">About Us</div>
-
-        {imagesAndText.map((item, index) => (
-          <div className="about-section" key={index}>
-            {(index % 2 === 0) ? (
-              <>
-              <div className="about-section-inner">
-                    <img className="about-image" src={item.image} alt="about" />
-                    <div className="about-image-text">{item.text}</div>
-                </div>
-              </>
-            ) : (
-              <>
-                <div className="about-section-inner">
-                    <div className="about-text">{item.text}</div>
-                    <img className="about-image" src={item.image} alt="about" />
-                </div>
-              </>
-            )}
-          </div>
-        ))}
-
-        <div className="about-content">
-          <p>
-            Foster's Estate is a family-owned and operated business. We have been in business since 2005 and have been
-            serving the Inland Empire and surrounding areas since then. We are a full-service estate sale company that
-            specializes in conducting estate sales, moving sales, and liquidations. We are licensed and insured. We have
-            a large following of customers that attend our sales. We also advertise on estatesales.net, estatesales.org, estatesale.com, and estatesalesearch.com. We also advertise on Facebook and Instagram.
-          </p>
+    <div>
+      <div id='/' className="homepage-container">
+        <div className="cover-image">
+          <img src="https://empire-s3-production.bobvila.com/articles/wp-content/uploads/2021/10/The-Secrets-to-Holding-a-Successful-Estate-Sale_1.jpg" alt="Cover" className="cover-image" />
         </div>
-    </div>
-  );
+        <div className="content-container">
+          <div className="text-section">
+            <h1 className="business-name">About Us</h1>
+            <p className="business-description">
+              {aboutUs}
+            </p>
+          </div>
+        </div>
+      </div>
+        <div className='meet-team-container'>
+          <Section sections={sectionInformation} />
+        </div>
+      </div>
+    );
 }
 
 export default AboutUs;

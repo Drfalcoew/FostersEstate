@@ -17,8 +17,20 @@
     display: flex;
   }
 
+
+  .section-image-container {
+    width: 200px;
+    height: 200px; /* Set your desired max width */
+    border-radius: 50%;
+    position: relative;
+    overflow: hidden;
+  }
+
   .section-image {
-    max-width: 40%;
+    width: 100%;
+    height: 100%;
+    background-size: cover;
+    background-position: center;
   }
 
   .section-text {

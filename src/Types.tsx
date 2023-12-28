@@ -14,3 +14,10 @@ export interface EmailRecipient {
     address: string;
     comments: string;
 }
+
+export interface SectionProps {
+    title: string,
+    description: string,
+    id: string,
+    image: string
+}

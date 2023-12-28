@@ -32,7 +32,6 @@ const Homepage = () => {
     <div>
       <div id='/' className="homepage-container">
         <div className="cover-image">
-          {/* You can replace the 'cover.jpg' with the actual image you want to use */}
           <img src="cover.jpg" alt="Cover" className="cover-image" />
         </div>
         <div className="content-container">

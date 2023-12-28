@@ -15,6 +15,8 @@
     overflow: hidden;
     display: flex; /* Add this line to enable centering */
     align-items: center; /* Center content vertically */
+    /*  zoom to fill */
+    transform: scale(1.1);
   }
 
   .cover-image::before {
