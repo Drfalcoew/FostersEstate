@@ -74,3 +74,17 @@
 .about-image-text {
   margin-left: 1rem;
 }
+
+.about-us-logo-container {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+}
+
+.about-us-logo {
+  height: 10vh;
+  margin-right: 1rem;
+  border-radius: 50%;
+  cursor: pointer;
+}

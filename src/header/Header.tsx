@@ -13,13 +13,13 @@ const Header: React.FC = () => {
 
   return (
     <div className="menu-bar">
-      <div className='header-left'> 
-        <div onClick={returnToHome}
-        className="logo">
+      <div onClick={returnToHome} className="header-left">
+        <div className='logo'>
+        <img className="logo-img" src="logo.png" alt="logo" />
           Foster's Estate
-          </div>
+        </div>
         <div onClick={returnToHome}
-         className="sub-logo">Family Owned Business</div>
+        className="sub-logo">Family Owned Business</div>
       </div>
       <nav className="nav-links">
         <a href="/">Home</a>

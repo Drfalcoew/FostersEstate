@@ -34,7 +34,10 @@ const AboutUs = () => {
         </div>
         <div className="content-container">
           <div className="text-section">
-            <h1 className="business-name">About Us</h1>
+            <div className="about-us-logo-container">
+              <img className="about-us-logo" src="logo.png" alt="logo" onClick={() => window.location.href = '/logo.png'} />
+              <h1 className="business-name">About Us</h1>
+            </div>
             <p className="business-description">
               {aboutUs}
             </p>
