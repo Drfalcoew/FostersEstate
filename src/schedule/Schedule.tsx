@@ -111,7 +111,7 @@ const Schedule: React.FC<ScheduleProps> = ({ onAppointmentScheduled }) => {
     <div className='schedule-main-container'>
       <div className='schedule-image-container'>
         <div className='schedule-image'>
-          <img src="formpage.jpg" alt="Cover" className="schedule-image" />
+          <img src="covers/fosters_estate_8.jpg" alt="Cover" className="schedule-image" />
         </div>
       </div>
       <div className='schedule-container'>

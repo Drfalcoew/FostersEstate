@@ -1,13 +1,16 @@
 // Header.tsx
 
 import React from 'react';
+import { Link, useNavigate } from 'react-router-dom';
 import './Header.css'; // Import the CSS file
 
 const Header: React.FC = () => {
 
+  const nav = useNavigate();
+
   const returnToHome = () => {
     if (window.location.pathname !== '/') {
-      window.location.href = '/';
+      nav('/')
     }
   }
 
@@ -22,12 +25,11 @@ const Header: React.FC = () => {
         className="sub-logo">Family Owned Business</div>
       </div>
       <nav className="nav-links">
-        <a href="/">Home</a>
-        <a href="/about">About Us</a>
-        <a href="/services">Services</a>
+        <Link to ="/">Home</Link>
+        <Link to ="/about">About us</Link>
+        <Link to ="/services">Services</Link>
         <a href="#contact">Contact</a>
-        <a style={{fontWeight: 600}} href="/schedule">Schedule Appointment</a>
-        {/* Add more menu items as needed */}
+        <Link style={{ fontWeight: 600 }} to ="/schedule">Schedule Appointment</Link>
       </nav>
     </div>
   );

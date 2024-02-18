@@ -30,7 +30,7 @@ const AboutUs = () => {
     <div>
       <div id='/' className="homepage-container">
         <div className="cover-image">
-          <img src="https://empire-s3-production.bobvila.com/articles/wp-content/uploads/2021/10/The-Secrets-to-Holding-a-Successful-Estate-Sale_1.jpg" alt="Cover" className="cover-image" />
+          <img src="covers/fosters_estate_5.jpg" alt="Cover" className="cover-image" />
         </div>
         <div className="content-container">
           <div className="text-section">

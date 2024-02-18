@@ -26,14 +26,9 @@ const sectionInformation = [
 ];
 
 const Homepage = () => {
-
- 
   return (
     <div>
       <div id='/' className="homepage-container">
-        <div className="cover-image">
-          <img src="cover.jpg" alt="Cover" className="cover-image" />
-        </div>
         <div className="content-container">
           <div className="text-section">
             <h1 className="business-name">Foster's Estate</h1>
@@ -44,6 +39,11 @@ const Homepage = () => {
           <Link to="/schedule">
             <button className="schedule-button">Schedule Now</button>
           </Link>
+        </div>
+        <div className='cover-image-container'>
+          <div className="cover-image">
+            <img src="/covers/estate_sale_4.jpg" alt="Cover" className="cover-image" />
+          </div>
         </div>
       </div>
         <Section sections={sectionInformation} />
