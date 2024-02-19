@@ -55,20 +55,22 @@
     .schedule-main-container {
         flex-direction: column;
         padding-bottom: 50px;
-    }
-
-    .schedule-image {
-        padding-bottom: 5vh;
+        display: block;
+        height: auto;
     }
     
     .schedule-image-container {
-        height: 50vh;
+        height: 30vh;
     }
-    
+
     .schedule-container {
-        margin: 5vh 0;
-        height: 50vh;
-        flex: auto;
+        height: 100vh;
+        padding: 20px;
+    }
+
+    .schedule-container h1 {
+        padding: 0 20px;
+        text-align: center;
     }
     
     .schedule-form-item {

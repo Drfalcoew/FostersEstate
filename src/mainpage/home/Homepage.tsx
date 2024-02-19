@@ -47,7 +47,7 @@ const Homepage = () => {
         </div>
       </div>
         <Section sections={sectionInformation} />
-      </div>
+    </div>
     );
   };
   

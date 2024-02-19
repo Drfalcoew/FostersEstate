@@ -3,15 +3,23 @@
 import React from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 import './Header.css'; // Import the CSS file
+import { MenuOutlined } from '@ant-design/icons';
+import { Menu, MenuProps } from 'antd';
 
 const Header: React.FC = () => {
 
   const nav = useNavigate();
+  const [showMenu, setShowMenu] = React.useState(false);
 
   const returnToHome = () => {
     if (window.location.pathname !== '/') {
       nav('/')
     }
+  }
+
+  const onClick: MenuProps['onClick'] = (e) => {
+      nav(`/${e.key}`)
+      setShowMenu(false);
   }
 
   return (
@@ -31,6 +39,19 @@ const Header: React.FC = () => {
         <a href="#contact">Contact</a>
         <Link style={{ fontWeight: 600 }} to ="/schedule">Schedule Appointment</Link>
       </nav>
+      <div className="mobile-menu-icon">
+        <MenuOutlined onClick={() => setShowMenu(!showMenu)} />
+        <Menu
+          onClick={onClick}
+          style={{ display: showMenu ? 'block' : 'none', position: 'absolute', top: '60px', left: '0', width: '100%' }}
+          mode="vertical"
+        >
+          <Menu.Item key="">Home</Menu.Item>
+          <Menu.Item key="about">About us</Menu.Item>
+          <Menu.Item key="services">Services</Menu.Item>
+          <Menu.Item key="schedule">Schedule Appointment</Menu.Item>
+        </Menu>
+      </div>
     </div>
   );
 };

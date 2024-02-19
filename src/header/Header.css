@@ -57,6 +57,10 @@
     transition: color 0.3s ease; /* Smooth color transition on hover */
   }
 
+  .mobile-menu-icon {
+    display: none;
+  }
+
   @media screen and (max-width: 600px) {
     .nav-links {
       display: none;
@@ -64,6 +68,12 @@
 
     .sub-logo {
       display: none;
+    }
+
+    .mobile-menu-icon {
+      display: block;
+      font-size: 1.5em;
+      cursor: pointer;
     }
   }
 

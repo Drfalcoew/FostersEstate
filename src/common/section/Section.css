@@ -22,8 +22,10 @@
     width: 200px;
     height: 200px; /* Set your desired max width */
     border-radius: 50%;
-    position: relative;
     overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
   }
 
   .section-image {
@@ -72,12 +74,15 @@
     }
   }
 
+  /* MOBILE STYLES */
   @media screen and (max-width: 600px) {
     .section-container {
       flex-direction: column;
+      margin: 0;
+      padding: 40px 0;
     }
     .section {
-      margin: 20px 0;
+      padding: 0;
     }
     .section-image {
       max-width: 80%;
