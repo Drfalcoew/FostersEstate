@@ -16,6 +16,7 @@ const Schedule: React.FC<ScheduleProps> = ({ onAppointmentScheduled }) => {
 
   const [loading, setLoading] = React.useState(false);
   const navigate = useNavigate();
+  const [form] = Form.useForm();
 
   const showLoadingModal = () => {
     setLoading(true);
@@ -59,9 +60,9 @@ const Schedule: React.FC<ScheduleProps> = ({ onAppointmentScheduled }) => {
 
       console.log('Sending email to customer with api url: ', process.env.REACT_APP_API_URL || 'http://localhost:8080');
 
-      const apiUrl = process.env.REACT_APP_API_URL || 'http://localhost:8080';
+      const apiUrl = process.env.REACT_APP_API_URL || 'http://localhost:8080/api/email';
 
-      const response = await fetch(`${apiUrl}/email`, {
+      const response = await fetch(`${apiUrl}`, {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
@@ -73,7 +74,9 @@ const Schedule: React.FC<ScheduleProps> = ({ onAppointmentScheduled }) => {
       if (response.ok) {
         const result = await response.json();
         console.log('Success:', result);
-        orderNumber = result.orderNumber;
+        orderNumber = result.entity.orderNumber;
+        // clear the form
+        form.resetFields();
       } else {
         // If the response status is not OK, handle the error
         console.error('Error:', response.status, response.statusText);
